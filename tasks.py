@@ -4,9 +4,7 @@ def scrape_one_twitter(sa_id: int, attempt: int):
     impact the rest. Also these are spaced out time to mitigate the rate limiting"""
     try:
         client = tweepy.Client(
-            bearer_token=os.environ["TWITTER_BEARER_TOKEN"],
-            wait_on_rate_limit=True,
-            return_type=dict,
+            bearer_token=os.environ["TWITTER_BEARER_TOKEN"], wait_on_rate_limit=True, return_type=dict
         )
 
         social_account = SocialAccount.objects.select_related("user", "user__profile").get(pk=sa_id)
