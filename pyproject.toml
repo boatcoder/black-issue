@@ -1,0 +1,7 @@
+[tool.black]
+line-length = 110
+target-version = ['py39']
+include = '\.pyi?$'
+# A regex preceded with ^/ will apply only to files and directories
+# in the root of the project.
+force-exclude = '''^/dubclub/.*/migrations/.*py'''
